@@ -52,12 +52,36 @@ Drum.propTypes = {
 
 export const DrumConfigs = [
   [
-    new DrumPadConfig(
+    [
       'Q',
       'Heater-1',
       'https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3'
-    )
-  ]
+    ],
+    [
+      'W',
+      'Heater-2',
+      'https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3'
+    ],
+    [
+      'E',
+      'Heater-3',
+      'https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3'
+    ],
+    [
+      'A',
+      'Heater-4',
+      'https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3'
+    ],
+    ['S', 'Clap', 'https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3'],
+    ['D', 'Open-HH', 'https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3'],
+    [
+      'Z',
+      "Kick-n'-Hat",
+      'https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3'
+    ],
+    ['X', 'Kick', 'https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3'],
+    ['C', 'Closed-HH', 'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3']
+  ].map(c => new DrumPadConfig(c[0], c[1], c[2]))
 ];
 
 export default Drum;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Display from './components/Display';
 import Drum, { DrumConfigs } from './components/Drum';
 
-function App() {
+const App = () => {
   const [lastSoundPlayedDescription, setLastSoundPlayedDescription] = useState(
     ''
   );
@@ -16,6 +16,6 @@ function App() {
       />
     </div>
   );
-}
+};
 
 export default App;
