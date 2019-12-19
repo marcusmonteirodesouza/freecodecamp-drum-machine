@@ -40,7 +40,7 @@ const DrumPad = ({ drumPadProps }) => {
     sound.currentTime = 0;
     sound.play();
 
-    onAudioPlayed();
+    onAudioPlayed(audioDescription);
   };
 
   const handleKeyDown = e => {

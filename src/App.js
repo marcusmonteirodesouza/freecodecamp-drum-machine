@@ -7,15 +7,11 @@ function App() {
     ''
   );
 
-  const setDisplayText = e => {
-    console.log(e);
-  };
-
   return (
     <div id="drum-machine">
       <Display text={lastSoundPlayedDescription} />
       <Drum
-        onAudioPlayed={() => setDisplayText('App.js')}
+        onAudioPlayed={setLastSoundPlayedDescription}
         drumPadConfigs={DrumConfigs[0]}
       />
     </div>
