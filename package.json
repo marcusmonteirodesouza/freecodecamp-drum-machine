@@ -1,6 +1,7 @@
 {
   "name": "freecodecamp-drum-machine",
   "version": "0.1.0",
+  "description": "My solution to FreeCodeCamp's Build a Drum Machine Challenge",
   "private": true,
   "author": {
     "name": "Marcus Vinicius Monteiro de Souza",
