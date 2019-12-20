@@ -45,6 +45,7 @@ const DrumPad = ({ drumPadProps }) => {
 
   const handleKeyDown = useCallback(
     e => {
+      e.preventDefault();
       if (e.key.toUpperCase() === keyboardKey) {
         playAudio();
       }
