@@ -68,7 +68,7 @@ const DrumPad = ({ drumPadProps }) => {
         type="button"
         onClick={playAudio}
       >
-        keyboardKey
+        {keyboardKey}
         <audio className="clip" id={keyboardKey} src={audioSrc}></audio>
       </button>
     </div>
