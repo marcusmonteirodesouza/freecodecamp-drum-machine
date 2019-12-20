@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { isChar } from '../../../utils';
 
@@ -35,19 +35,30 @@ const DrumPad = ({ drumPadProps }) => {
   const audioSrc = drumPadProps.audioSrc;
   const onAudioPlayed = drumPadProps.onAudioPlayed;
 
-  const playAudio = () => {
+  const playAudio = useCallback(() => {
     const sound = document.getElementById(keyboardKey);
     sound.currentTime = 0;
     sound.play();
 
     onAudioPlayed(audioDescription);
-  };
+  }, [audioDescription, keyboardKey, onAudioPlayed]);
 
-  const handleKeyDown = e => {
-    if (e.key.toUpperCase() === keyboardKey) {
-      playAudio();
-    }
-  };
+  const handleKeyDown = useCallback(
+    e => {
+      if (e.key.toUpperCase() === keyboardKey) {
+        playAudio();
+      }
+    },
+    [keyboardKey, playAudio]
+  );
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [handleKeyDown]);
 
   return (
     <div>
@@ -56,7 +67,6 @@ const DrumPad = ({ drumPadProps }) => {
         id={audioDescription}
         type="button"
         onClick={playAudio}
-        onKeyDown={handleKeyDown}
       >
         keyboardKey
         <audio className="clip" id={keyboardKey} src={audioSrc}></audio>
