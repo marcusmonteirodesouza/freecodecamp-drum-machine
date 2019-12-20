@@ -9,7 +9,9 @@ const App = () => {
 
   return (
     <div id="drum-machine">
-      <Display text={lastSoundPlayedDescription} />
+      <div id="display">
+        <Display text={lastSoundPlayedDescription} />
+      </div>
       <Drum
         onAudioPlayed={setLastSoundPlayedDescription}
         drumPadConfigs={DrumConfigs[0]}
